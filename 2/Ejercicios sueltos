@@ -1,0 +1,181 @@
+EJERCICIO 2
+tam = ['im1 4,14', 'im2 33,15', 'im3 6,34', 'im4 410,134']
+lista1=[]
+lista2=[]
+
+
+num=int(input('Ingrese un número:'))
+
+
+for elem in tam:
+    nombre, espacio, coordenadas = elem.partition(' ')
+    coordenadas = coordenadas.split(',')
+    
+    for i, el in enumerate(coordenadas):
+        coordenadas[i] = int(el)
+        
+    aux=int(coordenadas[0])
+    if(aux>=num):
+        lista1.extend([nombre, tuple(coordenadas)])
+    else:
+        lista2.extend([nombre, tuple(coordenadas)])
+        
+print('Lista con números mayores o iguales a' , num , ':' , lista1)
+print('Lista con números menores a' , num , ':' , lista2)
+
+
+
+EJERCICIO 3 (ver el orden de lista 2)
+lista = ['Auto', '123', 'Viaje', '50', '120']
+lista2=[]
+
+for elem in lista:
+    if elem.isdecimal():
+        lista2.append(elem)
+
+
+print(lista2)
+lista2.sort()
+print(lista2)
+
+
+EJERCICIO 4
+from random import shuffle
+p = [['Buenos Aires limita con Santiago del Estero', 'no'], ['Jujuy limita con Bolivia', 'si'], ['San Juan limita con Misiones', 'no']]
+
+correctas=0
+shuffle(p)
+while (len(p)!=0):
+        print('¿',p[0][0],'?',end= "")
+        respuesta = input(" Si o no ")
+        respuesta=respuesta.lower()
+        respuesta2=p[0][1]
+        print(respuesta2)
+        if respuesta == respuesta2:
+            print('Respuesta Correcta')
+            correctas=correctas+1
+        else:
+            print("Respuesta Incorrecta")
+        p.pop(0)
+print("Cantidad de respuestas correctas" ,correctas)
+
+
+EJERCICIO 5
+lista=[]
+
+print("""1: ingresar números
+2: ordenar números
+3: calcular el máximo
+4: calcular el mínimo
+5: calcular el promedio
+0: para terminar""")
+
+num=int(input('Ingrese la opción:'))
+while(num!=0):
+    if(num==1):
+        num=int(input('Ingrese numero para agregar:'))
+        lista.append(num)
+        print(lista)
+    elif (num==2):
+        lista.sort()
+        print(lista)
+    elif(num==3):
+        num_max=max(lista)
+        print("Número máximo de la lista: ",num_max)
+    elif(num==4):
+        num_min=min(lista)
+        print("Número mínimo de la lista: ",num_min)
+    elif(num==5):
+        suma=sum(lista)
+        promedio=suma/len(lista)
+        print("Promedio de los valores de la lista: ",promedio)
+    num=int(input('Ingrese la opción:'))
+print("Programa terminado")
+
+
+EJERCICIO 6
+lista=[]
+print("""1: ingresar números
+2: Sumar
+3: Restar
+4: Multiplicar
+5: Dividir
+0: Terminar""")
+
+op=int(input('Ingrese la opción: '))
+while(op!=0):
+    if(op==1):
+        num1=int(input('Ingrese primer número: '))
+        lista.append(num1)
+        num2=int(input('Ingrese primer número: '))
+        lista.append(num2)
+    if (largo==2):
+        if(op==2):
+            suma=num1+num2
+            print("La suma de los dos números es: ",suma)
+        elif(op==3):
+            resta=num1-num2
+            print("La resta de los dos números es: ",resta)
+        elif(op==4):
+            mult=num1*num2
+            print("La multiplicación de los dos números es: ",mult)
+        elif(op==5):
+            div=num1/num2
+            print("La división de los dos números es: ",div)
+    elif (largo==0):
+        print("No ingresó ningún número para operar")
+    op=int(input('Ingrese la opción:'))
+ 
+print("Programa terminado")
+
+
+EJERCICIO 7
+string=input("Ingrese un string: ")
+string=string.lower()
+
+
+string2 = string[::-1]    Doy vuelta la palabra
+print(string)
+print(string2)
+
+if string == string2:
+        print("La palabra es un palíndromo")
+else:
+        print("La palabra NO es un palíndromo")
+
+
+EJERCICIO 8
+cadena = input("Escriba un string: ")
+cadena = cadena.replace(' ', '')
+ 
+d = dict()
+ 
+for caracter in cadena:
+    if caracter not in d:
+        d[caracter] = 1
+    else:
+        d[caracter] = d[caracter] + 1
+print (d)
+print(len(d))
+
+def es_primo(num):
+    if num<2:
+        return False
+    elif num==2:
+        return True
+    elif num > 2:     
+        for divisor in range(2, num):  
+            if num % divisor == 0:
+                return False
+            elif num%divisor!=0 and divisor == num-1:
+                return True 
+
+
+for i, elem in d.items():
+    if es_primo(elem) == True:
+        print ("La cantidad de veces que aparece la letra ",i," SI es un número primo.")                 
+    elif es_primo(elem)== False:
+        print("La cantidad de veces que aparece la letra ",i," NO es un número primo.")
+    
+
+
