@@ -1,0 +1,7 @@
+Definir y justificar la estructura de datos a utilizar.
+Lista de diccionarios:
+-Con la lista puedo agregar los datos (también mostrarlos) de quiénes jugaron con más facilidad,
+-Al usar el diccionario, puedo acceder a los datos de cualquier jugador sólo con su nombre, sin necesidad de iterar sobre la estructura
+
+Elegir y justificar el formato de archivo a utilizar.
+Json: Me permite trabajar con estructuras anidada. A la hora de almacenar los archivos, lo hace más legible para el usuario.
