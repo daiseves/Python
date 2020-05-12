@@ -57,12 +57,6 @@ buttons2 = [[ sg.Button("Jugar", font=("Verdana", 10)),sg.Button("Cancelar", fon
 buttons3 = [[ sg.Button("Mostrar", font=("Verdana", 10)),]]
 
 
-
-
-
-
-
-
 #----------PRIMER VENTANA DONDE PREGUNTO SI QUIERO JUGAR O MOSTRAR LOS DATOS---------- 
 layout = [[sg.Text('¡Hola! ¿Qué preferís hacer?: ', size=(50,1), justification='center', font=("Verdana", 10))],             
           [sg.Column(buttons, justification='center')]]
