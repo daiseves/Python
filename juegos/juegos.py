@@ -80,8 +80,10 @@ if event is 'Jugar':
                [sg.Text('Por favor, elige el juego que quieres jugar: ', size=(50, 1),justification='center', font=("Verdana", 10))],
                [sg.Listbox(opciones, size=(30, len(opciones)),  font=("Verdana", 10),  key='juego')],             
                [sg.Column(buttons2, justification='center')]]
+    
     window = sg.Window('Datos del jugador', layout2)
     window.Finalize()
+    
     while True:
         event, values = window.Read()
          #----------EVENTOS DE LA SEGUNDA VENTANA()---------- 
